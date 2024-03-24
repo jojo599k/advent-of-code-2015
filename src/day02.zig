@@ -191,14 +191,3 @@ fn readPresents(presents: *const []Present) ![]Present {
     //print("Current Length: {d}\n", .{data.index});
     return presents.*[0..data.index];
 }
-
-fn findSmallestSide(present: *const Present) u32 {
-    var smallest_side = if (present.length < present.width)
-        present.length
-    else
-        present.width;
-    if (present.height < smallest_side) {
-        smallest_side = present.height;
-    }
-    return smallest_side;
-}
